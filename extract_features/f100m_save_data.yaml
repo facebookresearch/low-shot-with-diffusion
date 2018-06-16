@@ -1,0 +1,15 @@
+dataset_type: 'F100MDataset'
+dataset_params:
+  i0: 0
+  i1: 100000000
+transform_params:
+  transform_list: ['Scale','CenterCrop', 'ToTensor', 'Normalize']
+  image_size: 224
+  scale: 256
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+data_loader_params:
+  batch_size: 64
+  shuffle: False
+  num_workers: 48
+  pin_memory: True
