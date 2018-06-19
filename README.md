@@ -198,3 +198,7 @@ bash run_diffusion.bash 4
 Since these operations are quite costly, it is worthwhile to parallelize the script to submit jobs on a cluster instead of doing the loops explicitly.
 
 The final output looks like [this GIST](https://gist.github.com/mdouze/89e30746d37f98224610df5a21c84ecc)
+
+
+## License
+low-shot-with-diffusion is CC-BY-NC licensed, as found in the LICENSE file.
