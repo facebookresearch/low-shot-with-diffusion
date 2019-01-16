@@ -39,7 +39,7 @@ The feature extraction uses the precomputed model from "Low-shot Learning by Shr
 First assume we have a directory for the data (given in env var DDIR): 
 ```
 cd $DDIR
-wget https://s3-us-west-1.amazonaws.com/low-shot-shrink-hallucinate/models.zip
+wget https://dl.fbaipublicfiles.com/low-shot-shrink-hallucinate/models.zip
 unzip models.zip
 ```
 The model we are interested in is `models/checkpoints/ResNet50/89.tar`, which is not a tar file despite the name.
