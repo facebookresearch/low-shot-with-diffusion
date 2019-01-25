@@ -61,9 +61,9 @@ This will store the descriptors for the first 1M files (a matrix of 1M * 2048) i
 
 Precomputed descriptors for bloc0 and block1 (first 2M images) are available here:
 
-[block0.hdf5](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/f100m/block0.hdf5)
+[block0.hdf5](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/f100m/block0.hdf5)
 
-[block1.hdf5](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/f100m/block1.hdf5)
+[block1.hdf5](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/f100m/block1.hdf5)
 
 The descriptors are then PCA'd down to 256 dimensions with 
 
@@ -75,17 +75,17 @@ python train_apply_pca.py apply
 The output is a matrix of size 100M * 256 that is stored in raw binary format, this is the data that is actually used in experiments.
 The PCA transform (in Faiss format) and the large matrix are available at:
 
-[PCAR256.vt](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/f100m/PCAR256.vt)
+[PCAR256.vt](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/f100m/PCAR256.vt)
 
-[concatenated_PCAR256.raw](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/f100m/concatenated_PCAR256.raw)
+[concatenated_PCAR256.raw](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/f100m/concatenated_PCAR256.raw)
 
 ## Extracting the features for Imagenet
 
 The features for Imagenet are extracted with the original code from Hariharan et al in the package https://github.com/facebookresearch/low-shot-shrink-hallucinate. 
 The features from the training and validation parts of Imagenet are provided here: 
 
-[train.hdf5](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/train.hdf5)
-[val.hdf5](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/features/val.hdf5)
+[train.hdf5](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/train.hdf5)
+[val.hdf5](https://dl.fbaipublicfiles.com/low-shot-diffusion/features/val.hdf5)
 
 Since they are relatively small, the PCA transformation is applied on-the-fly.
 
@@ -107,7 +107,7 @@ The meaning of the parameters is:
 - the following options are hyper-parameters that were optimized on the validation set.
 
 The output should be like [this GIST](https://gist.github.com/mdouze/2bc5da096a4ed0ee69a05ac98c56cc0d). 
-The final top-5 accuracy is 0.700, which is one of the 5 accuracies averaged to get the "logistic regressoin" column in table 3 of the paper. 
+The final top-5 accuracy is 0.700, which is one of the 5 accuracies averaged to get the "logistic regression" column in table 3 of the paper. 
 Similarly, the 0.565 number is reported in table 5 (novel classes) of the supplementary material.
 
 ### Run script
@@ -138,11 +138,11 @@ The `I_11` represents the edge links and `D_11` the edge weights.
 
 The Faiss index and the graph are also available through the links
 
-[ndis1000000.index](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/knngraph/ndis1000000.index)
+[ndis1000000.index](https://dl.fbaipublicfiles.com/low-shot-diffusion/knngraph/ndis1000000.index)
 
-[ndis1000000_k32_I_11.int32](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/knngraph/ndis1000000_k32_I_11.int32)
+[ndis1000000_k32_I_11.int32](https://dl.fbaipublicfiles.com/low-shot-diffusion/knngraph/ndis1000000_k32_I_11.int32)
 
-[ndis1000000_k32_D_11.float32](https://s3-us-west-1.amazonaws.com/low-shot-diffusion/knngraph/ndis1000000_k32_D_11.float32)
+[ndis1000000_k32_D_11.float32](https://dl.fbaipublicfiles.com/low-shot-diffusion/knngraph/ndis1000000_k32_D_11.float32)
 
 The graph is provided for ndis=100k, 1M, 10M, 100M, jsut replace the number in the filename. 
 
